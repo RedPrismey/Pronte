@@ -1,7 +1,7 @@
-5 Pages JSP à faire (admin,prof,étudiant,login,deconnection,sign up): 
+6 Pages JSP à faire (admin,prof,étudiant,login,deconnection,sign up): 
 
 Admin :
--Inscrire un étudiant dans une spécialité via un formulaire permettant de renseigner son nom, son prénom, sa spécialité et son numéro INE
+-Inscrire un étudiant dans une spécialité via un formulaire permettant de sélection un étudiant puis d'entrer sa spécialité et son numéro INE
 -Saisir la note d’un étudiant à l’aide d’un formulaire permettant de renseigner son nom, son prénom, l’intitulé du module ainsi que la note obtenue dans ce module.
 -Afficher la liste des étudiants par spécialité.
 -Afficher les notes des étudiants pour un module donné.
