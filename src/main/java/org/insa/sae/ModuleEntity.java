@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-// Represents rows of table `module` (name chosen ModuleEntity to avoid clash with java.lang.Module)
+// Représente la table `module`, juste le nom Module est déjà pris
 public class ModuleEntity {
     private int id;
     private String name;
