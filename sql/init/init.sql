@@ -33,3 +33,19 @@ CREATE TABLE IF NOT EXISTS notes (
   id_student INTEGER REFERENCES users(id) NOT NULL,
   id_module INTEGER REFERENCES module(id) NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS evaluations (
+  id SERIAL PRIMARY KEY,
+  id_module INTEGER REFERENCES module(id) NOT NULL,
+  id_student INTEGER REFERENCES users(id) NOT NULL,
+  rating INTEGER CHECK (rating >= 1 AND rating <= 5) NOT NULL,
+  comment TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS evaluation_criteria (
+  id SERIAL PRIMARY KEY,
+  id_module INTEGER REFERENCES module(id) NOT NULL,
+  criterion_name VARCHAR(255) NOT NULL,
+  average_rating DECIMAL(3, 2)
+);
