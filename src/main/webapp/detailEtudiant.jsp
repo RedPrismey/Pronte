@@ -72,10 +72,6 @@
                     <div class="info-label">Rôle :</div>
                     <div class="info-value">Étudiant</div>
                 </div>
-                <div class="info-row">
-                    <div class="info-label">Date d'inscription :</div>
-                    <div class="info-value">À compléter</div>
-                </div>
             </div>
             
             <div class="stats-card">

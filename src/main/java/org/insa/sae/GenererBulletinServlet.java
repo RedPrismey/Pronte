@@ -139,8 +139,8 @@ public class GenererBulletinServlet extends HttpServlet {
             float valeur = (float) note.get("note"); 
             double coef = (double) note.get("coef");
             
-            sommePonderee += (valeur * coef);
-            sommeCoefs += coef;
+            sommePonderee += (valeur);
+            sommeCoefs += 1;
         }
         
         if (sommeCoefs == 0) return 0.0;
