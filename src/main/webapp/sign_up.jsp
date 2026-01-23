@@ -2,27 +2,136 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
     <title>Inscription - Pronte</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e9ecef; margin: 0; }
-        .signup-container { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 350px; }
-        h2 { text-align: center; color: #333; margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
-        input[type="text"], input[type="password"], select { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; transition: border 0.3s; }
-        input:focus, select:focus { border-color: #0056b3; outline: none; }
-        button { width: 100%; padding: 12px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; margin-top: 10px; transition: background 0.3s; }
-        button:hover { background-color: #218838; }
-        .login-link { text-align: center; margin-top: 20px; font-size: 0.9em; }
-        .login-link a { color: #0056b3; text-decoration: none; }
-        .login-link a:hover { text-decoration: underline; }
-        .error-msg { color: #dc3545; text-align: center; margin-bottom: 15px; font-size: 0.9em; }
+        :root {
+            --col-midnight: #090446;
+            --col-mint-light: #94E8B4;
+            --col-mint-med: #72BDA3;
+            --col-forest: #5E8C61;
+            --col-olive: #404F40;
+            --col-white: #ffffff;
+            --col-error: #d9534f;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0;
+            background: linear-gradient(135deg, var(--col-mint-med), var(--col-midnight));
+        }
+
+        .signup-container { 
+            background: var(--col-white); 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 { 
+            text-align: center; 
+            color: var(--col-midnight); 
+            margin-top: 0;
+            margin-bottom: 25px; 
+            font-weight: 700;
+        }
+
+        .form-group { 
+            margin-bottom: 20px; 
+        }
+
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            color: var(--col-olive);
+            font-size: 0.9em;
+        }
+
+        input[type="text"], input[type="password"], select { 
+            width: 100%; 
+            padding: 12px; 
+            box-sizing: border-box; 
+            border: 2px solid #eee; 
+            border-radius: 6px; 
+            font-size: 14px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus { 
+            border-color: var(--col-mint-med); 
+            outline: none; 
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(114, 189, 163, 0.2);
+        }
+
+        button { 
+            width: 100%; 
+            padding: 14px; 
+            background-color: var(--col-forest); 
+            color: white; 
+            border: none; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            font-weight: bold; 
+            margin-top: 15px; 
+            transition: background 0.3s, transform 0.1s;
+        }
+
+        button:hover { 
+            background-color: var(--col-olive); 
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .login-link { 
+            text-align: center; 
+            margin-top: 25px; 
+            font-size: 0.95em; 
+            color: #666;
+        }
+
+        .login-link a { 
+            color: var(--col-midnight); 
+            text-decoration: none; 
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .login-link a:hover { 
+            color: var(--col-mint-med); 
+            text-decoration: underline;
+        }
+
+        .error-msg { 
+            color: var(--col-error); 
+            background-color: #fdeded;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #f5c6cb;
+            text-align: center; 
+            margin-bottom: 20px; 
+            font-size: 0.9em; 
+        }
     </style>
 </head>
 <body>
 
 <div class="signup-container">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="assets/logo.svg" alt="Logo" width="60" height="60">
+    </div>
     <h2>Créer un compte</h2>
 
     <% if (request.getAttribute("errorMessage") != null) { %>
