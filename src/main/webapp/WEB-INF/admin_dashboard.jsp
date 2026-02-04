@@ -14,7 +14,7 @@
             if(confirm("Êtes-vous sûr de vouloir supprimer cet élément ? Cette action est irréversible.")) {
                 var form = document.createElement("form");
                 form.method = "POST";
-                form.action = "AdminActionServlet";
+                form.action = "admin";
                 
                 var inputAction = document.createElement("input");
                 inputAction.type = "hidden";
@@ -308,7 +308,7 @@
 
     <div id="specialties" class="card">
         <h2>Gestion des Spécialités</h2>
-        <form action="AdminActionServlet" method="post">
+        <form action="admin" method="post">
             <input type="hidden" name="action" value="createSpecialty">
             <div class="form-row">
                 <input type="text" name="nomSpecialite" placeholder="Nom de la nouvelle spécialité (ex: Big Data)" required>
@@ -319,7 +319,7 @@
 
     <div id="modules" class="card">
         <h2>Ajouter un Module</h2>
-        <form action="AdminActionServlet" method="post">
+        <form action="admin" method="post">
             <input type="hidden" name="action" value="createModule">
             
             <div class="form-row">
@@ -365,7 +365,7 @@
     <div id="inscription" class="card">
         <h2>Valider l'inscription administrative</h2>
         <p style="font-size:0.9em; color:#666; margin-bottom:15px;">Seuls les étudiants sans spécialité apparaissent ici.</p>
-        <form action="AdminActionServlet" method="post">
+        <form action="admin" method="post">
             <input type="hidden" name="action" value="createEtudiant">
             
             <div class="form-row">
@@ -410,7 +410,7 @@
 
     <div id="saisie_notes" class="card">
         <h2>Saisir une note</h2>
-        <form action="AdminActionServlet" method="post">
+        <form action="admin" method="post">
             <input type="hidden" name="action" value="addNote">
             
             <div class="form-row">
