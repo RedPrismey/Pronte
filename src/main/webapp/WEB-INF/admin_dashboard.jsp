@@ -574,8 +574,8 @@
                         String color = nVal < 10 ? "#d9534f" : "var(--col-forest)";
                     %>
                     <tr>
-                        <td><strong><%= row.get("nom") %></strong></td>
-                        <td><%= row.get("prenom") %></td>
+                        <td><strong><%= row.get("prenom") %></strong></td>
+                        <td><%= row.get("nom") %></td>
                         <td><%= row.get("module") %></td>
                         <td style="color:<%= color %>; font-weight:bold;"><%= nVal %>/20</td>
                         <td><%= row.get("coef") %></td>
@@ -637,8 +637,8 @@
                 %>
                 <tr>
                     <td><%= ineDisplay %></td>
-                    <td><%= u.getSurname() %></td>
                     <td><%= u.getName() %></td>
+                    <td><%= u.getSurname() %></td>
                     <td><%= speDisplay %></td>
                     <td>
                         <a href="GenererBulletinServlet?id=<%= u.getId() %>" target="_blank" style="color: var(--col-midnight); text-decoration: none; font-weight: bold;">📄 Bulletin</a> |
