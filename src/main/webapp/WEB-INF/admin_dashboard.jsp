@@ -389,7 +389,7 @@
             </div>
             
             <div class="form-row">
-                <input type="text" name="ine" placeholder="Numéro INE à attribuer" required>
+                <input type="text" name="ine" placeholder="Numéro INE à attribuer" pattern="[0-9]{11}" inputmode="numeric" maxlength="11" required>
                 <select name="specialtyId" required>
                     <option value="" disabled selected>-- Spécialité --</option>
                     <% 
@@ -446,13 +446,13 @@
             </div>
 
             <div class="form-row">
-                <input type="number" step="0.5" name="valeur" placeholder="Note /20" required>
+                <input type="number" step="0.5" name="valeur" placeholder="Note /20" min="0" max="20" required>
                 <select name="typeNote">
                     <option value="Exam">Examen Final</option>
                     <option value="CC">Contrôle Continu</option>
                     <option value="TP">TP</option>
                 </select>
-                <input type="number" step="0.1" name="coef" placeholder="Coefficient" value="1.0">
+                <input type="number" step="0.1" name="coef" placeholder="Coefficient" value="1.0" min="0">
             </div>
             <button type="submit">Enregistrer la note</button>
         </form>
